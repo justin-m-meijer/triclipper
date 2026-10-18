@@ -4,7 +4,7 @@ Made by [Justin Meijer](https://www.justinmeijer.nl) as a hobby project.
 On the App Store for Mac, iPhone and iPad: https://apps.apple.com/app/id6806387176 ·
 more at https://www.justinmeijer.nl/apps/tri-clipper/ · questions to info@justinmeijer.nl.
 
-Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE.md): free for any noncommercial use.
+Open source under the [Mozilla Public License 2.0](LICENSE).
 
 A Safari extension that saves web pages into [Trilium](https://github.com/TriliumNext/Trilium),
 in the spirit of Obsidian's Web Clipper: templates, variables, per-site rules, a
@@ -125,6 +125,12 @@ profile.
 - A destination is looked up by title. If two notes share that title the clip is
   refused rather than guessed at, and the message lists the ids to choose from —
   paste one into **Save under**.
+
+## License
+
+Licensed under the [Mozilla Public License 2.0](LICENSE). You may use, change and share it, also
+commercially. If you distribute a changed version of these files, those files must stay under the
+MPL 2.0 and their source must be available.
 
 ## Credits
 
