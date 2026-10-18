@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Deliberately almost empty. The macOS entitlements carry app-sandbox and
+	     network.client; neither exists on iOS, where every app is sandboxed and
+	     outbound networking needs no entitlement. release.sh adds the
+	     application-identifier and team-identifier at signing time, because those
+	     carry the team and cannot live in a checked-in file. -->
+	<key>get-task-allow</key><false/>
+</dict>
+</plist>

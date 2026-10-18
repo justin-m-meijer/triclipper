@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clip to Trilium</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="brand">Clip to Trilium</span>
+    <button id="open-options" class="icon" title="Settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true">
+        <path d="M22.86,10.28 L22.86,13.72 L19.47,13.86 L18.6,15.97 L20.9,18.47 L18.47,20.9 L15.97,18.6 L13.86,19.47 L13.72,22.86 L10.28,22.86 L10.14,19.47 L8.03,18.6 L5.53,20.9 L3.1,18.47 L5.4,15.97 L4.53,13.86 L1.14,13.72 L1.14,10.28 L4.53,10.14 L5.4,8.03 L3.1,5.53 L5.53,3.1 L8.03,5.4 L10.14,4.53 L10.28,1.14 L13.72,1.14 L13.86,4.53 L15.97,5.4 L18.47,3.1 L20.9,5.53 L18.6,8.03 L19.47,10.14 Z M12,8.1 A3.9,3.9 0 1 0 12,15.9 A3.9,3.9 0 1 0 12,8.1 Z" fill="currentColor" fill-rule="evenodd"/>
+      </svg>
+    </button>
+  </header>
+
+  <main id="form" hidden>
+    <label class="field">
+      <span>Template</span>
+      <select id="template"></select>
+    </label>
+
+    <label class="field">
+      <span>Title</span>
+      <input id="title" type="text" autocomplete="off" spellcheck="false">
+    </label>
+
+    <label class="field">
+      <span>Save under</span>
+      <input id="destination" type="text" list="destinations" autocomplete="off" spellcheck="false"
+             placeholder="Note title, note id, or root">
+      <datalist id="destinations"></datalist>
+    </label>
+
+    <div class="field">
+      <span>Content</span>
+      <div id="modes" class="chips" role="group" aria-label="What to clip"></div>
+    </div>
+
+    <div class="field">
+      <span class="row">Labels <button id="add-label" class="link" type="button">+ add</button></span>
+      <div id="labels"></div>
+    </div>
+
+    <details id="preview-box">
+      <summary>Preview <span id="preview-meta"></span></summary>
+      <iframe id="preview" sandbox referrerpolicy="no-referrer"></iframe>
+    </details>
+  </main>
+
+  <p id="message" class="message"></p>
+
+  <footer>
+    <button id="highlight" class="secondary" type="button" title="Highlight mode">Highlight</button>
+    <button id="clip" class="primary" type="button" disabled>Clip</button>
+  </footer>
+
+  <script src="../lib/templates.js"></script>
+  <script src="../lib/settings.js"></script>
+  <script src="../lib/clipper.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

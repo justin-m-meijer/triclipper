@@ -1,0 +1,17 @@
+build/
+.DS_Store
+
+# Kept locally, not part of the public source
+Marketing/
+Test/
+Xcode/
+Support/release.env
+Support/release.env.example
+Support/ExportOptions-*.plist
+Resources/AppIcon.icon/
+Resources/make-icons.*
+Resources/fit.py
+Resources/mark.svg
+archive-*.sh
+release.sh
+upload.sh

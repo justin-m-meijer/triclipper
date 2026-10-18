@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSPrivacyTracking</key><false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<!-- Nothing is collected: pages go to the server the user configures and
+	     nowhere else, and the settings never leave the device. -->
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<!-- No required-reason API is used: no UserDefaults, no file timestamps,
+	     no disk space, no active keyboard, no system boot time. -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array/>
+</dict>
+</plist>

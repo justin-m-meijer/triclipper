@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tri Clipper Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+<div class="page">
+
+  <h1>Tri Clipper</h1>
+
+  <section>
+    <h2>Connection</h2>
+    <div class="grid">
+      <label class="field">
+        <span>Server address</span>
+        <input id="serverUrl" type="text" placeholder="http://192.168.1.22:8080"
+               spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off">
+        <small>The address you open Trilium at, without a trailing slash.</small>
+      </label>
+      <label class="field">
+        <span>ETAPI token</span>
+        <input id="token" type="password" spellcheck="false" autocapitalize="none"
+               autocorrect="off" autocomplete="off">
+        <small>Trilium → Options → ETAPI → Create new token.</small>
+      </label>
+      <label class="field">
+        <span>Requests go</span>
+        <select id="transport">
+          <option value="native">through Tri Clipper (recommended)</option>
+          <option value="direct">straight from Safari</option>
+        </select>
+        <small>Tri Clipper makes the request itself, which is how it reaches a plain-http
+          server on your own network. Nothing has to be installed on the device besides
+          Tri Clipper, and this works the same on iPhone, iPad and Mac. Pick
+          “straight from Safari” only if Trilium is on https and sends CORS headers.</small>
+      </label>
+    </div>
+    <div class="actions">
+      <button id="test" class="secondary" type="button">Test connection</button>
+      <span id="test-result" class="result"></span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Behaviour</h2>
+    <div class="grid">
+      <label class="field">
+        <span>Default template</span>
+        <select id="defaultTemplateId"></select>
+      </label>
+      <label class="field">
+        <span>Label holding the page address</span>
+        <input id="urlLabel" type="text" spellcheck="false" autocapitalize="none" autocorrect="off">
+        <small>Used to find an earlier clip of the same page when appending.</small>
+      </label>
+      <label class="check"><input id="showNotification" type="checkbox"> Show a notification after clipping</label>
+      <label class="check"><input id="openAfterClip" type="checkbox"> Open the new note in a tab</label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Templates</h2>
+    <div class="templates">
+      <aside>
+        <ul id="template-list"></ul>
+        <div class="actions">
+          <button id="add-template" class="secondary" type="button">New</button>
+          <button id="duplicate-template" class="secondary" type="button">Duplicate</button>
+        </div>
+      </aside>
+
+      <div id="editor" class="editor">
+        <label class="field">
+          <span>Name</span>
+          <input id="t-name" type="text">
+        </label>
+        <div class="grid two">
+          <label class="field">
+            <span>Save under</span>
+            <input id="t-destination" type="text" placeholder="Clippings" spellcheck="false">
+            <small>A note title, a note id, <code>root</code>, or a path copied from
+              Trilium's address bar.</small>
+          </label>
+          <label class="field">
+            <span>Clip</span>
+            <select id="t-mode">
+              <option value="article">Article (readable text)</option>
+              <option value="selection">Selection</option>
+              <option value="highlights">Highlights</option>
+              <option value="page">Full page</option>
+              <option value="bookmark">Link only</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Use automatically for</span>
+          <textarea id="t-triggers" rows="3" spellcheck="false"
+            placeholder="example.com&#10;https://news.site/blog/&#10;/^https:\/\/.*\/docs\//"></textarea>
+          <small>One per line: a domain, an address it must start with, or /a regular expression/.
+            The first template with a match wins.</small>
+        </label>
+        <label class="field">
+          <span>Note title</span>
+          <input id="t-title" type="text" spellcheck="false">
+        </label>
+        <div class="field">
+          <span class="row">Labels <button id="t-add-label" class="link" type="button">+ add</button></span>
+          <div id="t-labels"></div>
+        </div>
+        <label class="field">
+          <span>Note body</span>
+          <textarea id="t-content" rows="9" spellcheck="false"></textarea>
+          <small>HTML. <code>{{content}}</code> is whatever the mode above produced.</small>
+        </label>
+        <label class="check"><input id="t-append" type="checkbox">
+          Add to an existing note for the same page instead of making a new one</label>
+        <div class="actions">
+          <button id="delete-template" class="danger" type="button">Delete this template</button>
+        </div>
+      </div>
+    </div>
+
+    <details class="variables">
+      <summary>Variables you can use</summary>
+      <div id="variable-help"></div>
+    </details>
+
+    <div class="actions">
+      <button id="export" class="secondary" type="button">Export templates</button>
+      <button id="import" class="secondary" type="button">Import templates</button>
+      <button id="reset" class="secondary" type="button">Restore the built-in templates</button>
+      <input id="import-file" type="file" accept="application/json" hidden>
+    </div>
+  </section>
+
+  <p id="saved" class="saved"></p>
+</div>
+
+<script src="../lib/templates.js"></script>
+<script src="../lib/settings.js"></script>
+<script src="options.js"></script>
+</body>
+</html>
