@@ -126,6 +126,10 @@ profile.
   refused rather than guessed at, and the message lists the ids to choose from —
   paste one into **Save under**.
 
+## Support
+
+If this is useful to you, you can support my work with a [donation through PayPal](https://www.paypal.com/donate?hosted_button_id=UNBDNLN8MSC88).
+
 ## License
 
 Licensed under the [Mozilla Public License 2.0](LICENSE). You may use, change and share it, also
