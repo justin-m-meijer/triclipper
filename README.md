@@ -59,6 +59,10 @@ disappears with it until you tick it again.
 
 Signing with your own Developer ID certificate removes it entirely.
 
+Don't want to tick that box after every Safari restart? The
+[App Store version](https://apps.apple.com/app/id6806387176) is signed and works on Mac, iPhone
+and iPad, and buying it supports development.
+
 ## Why the requests go through Tri Clipper
 
 "The app" here means Tri Clipper's own containing app, the one you install from
@@ -135,6 +139,11 @@ If this is useful to you, you can support my work with a [donation through PayPa
 Licensed under the [Mozilla Public License 2.0](LICENSE). You may use, change and share it, also
 commercially. If you distribute a changed version of these files, those files must stay under the
 MPL 2.0 and their source must be available.
+
+## Name and icon
+
+The code is MPL 2.0; the name "Tri Clipper" and the app icon are not. Forks are welcome, under a
+different name and icon.
 
 ## Credits
 
